@@ -1,0 +1,51 @@
+<head>
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/small-business.css" rel="stylesheet">
+
+</head>
+
+  <!-- Page Content -->
+<div class="container">
+
+  <!-- Heading Row -->
+  <div class="row align-items-center my-5">
+    <div class="col-lg-7">
+      <img class="img-fluid rounded mb-4 mb-lg-0" src="/bootstrap/assets/img/cat-and-dpg.jpg" alt="">
+    </div>
+    <!-- /.col-lg-8 -->
+    <div class="col-lg-5">
+      <h1 class="font-weight-light">MAKE LIVES HAVE YOUR LOVE</h1>
+      <p>私達の手で幸せに出来る子達が溢れています。愛護団体やボランティアの方々が提供し下さる彼らの性格などを知り、「会いたい！」と思ったらコメントを残してみてください！最高の瞬間が待っています！</p>
+      <a class="btn btn-primary" href="#">Call to Action!</a>
+    </div>
+    <!-- /.col-md-4 -->
+  </div>
+  <!-- /.row -->
+
+  <!-- Call to Action Well -->
+  <div class="card text-white bg-secondary my-5 py-4 text-center">
+    <div class="card-body">
+      <p class="text-white m-0">家族や友人・SNSなどで広めてくれるととても嬉しいです！皆さんの手で救える命を少しでも増やしていきましょう！</p>
+    </div>
+  </div>
+
+    <!-- Content Row -->
+  <div class="row">
+    <% @articles.each do |article| %>
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <div class="card-body">
+          <img src="bootstrap/assets/img/adorable.jpg" class="rounded-circle img-fluid" alt="">
+            <h2 class="card-title text-center mt-1"><%= article.title %></h2>
+            <p class="card-text"><%= article.description %></p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary btn-sm">More Info</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
