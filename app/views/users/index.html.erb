@@ -1,0 +1,33 @@
+<img src="bootstrap/assets/img/people.jpg" class="img-fluid" alt="Responsive image">
+<div class="container">
+  <!-- Call to Action Well -->
+  <div class="card text-white bg-secondary my-5 py-4 text-center">
+    <div class="card-body">
+      <p class="text-white m-0">動物達を引き取り、彼らの為に活動する方々です！</p>
+    </div>
+  </div>
+
+  <!-- Content Row -->
+  <div class="apple_pagination mb-4">
+    <%= will_paginate @users, :container => false %>
+  </div>
+  <div class="row">
+    <% @users.each do |user| %>
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <div class="card-body">
+          <img src="bootstrap/assets/img/adorable.jpg" class="rounded-circle img-fluid" alt="">
+            <h2 class="card-title text-center mt-1"><%= user.username %></h2>
+            <p class="card-text"><%= user.introduction %></p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary btn-sm">More Info</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="apple_pagination mb-4">
+    <%= will_paginate @users, :container => false %>
+  </div>
+</div>

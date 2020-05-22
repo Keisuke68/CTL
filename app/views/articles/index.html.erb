@@ -1,13 +1,5 @@
-<head>
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom styles for this template -->
-  <link href="css/small-business.css" rel="stylesheet">
-
-</head>
-
-  <!-- Page Content -->
-<div class="container">
+<!-- Page Content -->
+<div class="container-fluid bg-dark">
 
   <!-- Heading Row -->
   <div class="row align-items-center my-5">
@@ -22,8 +14,7 @@
     </div>
     <!-- /.col-md-4 -->
   </div>
-  <!-- /.row -->
-
+  
   <!-- Call to Action Well -->
   <div class="card text-white bg-secondary my-5 py-4 text-center">
     <div class="card-body">
@@ -31,7 +22,10 @@
     </div>
   </div>
 
-    <!-- Content Row -->
+  <!-- Content Row -->
+  <div class="apple_pagination mb-4">
+    <%= will_paginate @articles, :container => false %>
+  </div>
   <div class="row">
     <% @articles.each do |article| %>
       <div class="col-md-4 mb-5">
@@ -47,5 +41,8 @@
         </div>
       </div>
     <% end %>
+  </div>
+  <div class="apple_pagination mb-4">
+    <%= will_paginate @articles, :container => false %>
   </div>
 </div>
