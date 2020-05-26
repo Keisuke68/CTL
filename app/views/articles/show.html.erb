@@ -1,4 +1,6 @@
-<!-- Page Content -->
+<% content_for :navbar do %>
+    <%= render 'layouts/navbar_variation1' %>
+<% end %>
   <div class="container mt-5">
     <div class="row">
       <!-- Post Content Column -->
@@ -16,7 +18,9 @@
         </small>
 
         <!-- Preview Image -->
-        <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+        <div class="row mx-3 my-3">
+          <img src="<%= @article.image %>" width="100">
+        </div>
 
         <div class="card-body">
             <div class="card-text text-left"><%= simple_format(@article.description) %></div>
