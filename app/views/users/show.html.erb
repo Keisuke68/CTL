@@ -1,0 +1,48 @@
+<% content_for :navbar do %>
+    <%= render 'layouts/navbar_variation1' %>
+<% end %>
+<!-- Page Content -->
+  <div class="container mt-5">
+    <div class="row">
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+        <!-- name -->
+        <h1 class="mt-4"><%= @user.username %></h1>
+        <!-- Date/Time -->
+        <small>Created <%= time_ago_in_words(@user.created_at) %> ago,
+                <%= time_ago_in_words(@user.updated_at) %>edited ago
+        </small>
+
+        <!-- Preview Image -->
+        <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+
+        <div class="card-body">
+            <div class="badge badge-primary text-wrap" style="width: 6rem;">
+              自己紹介と今後の活動
+            </div>
+            <div class="card-text text-left border border-info my-3 py-2 px-2"><%= simple_format(@user.introduction) %></div>
+            <% if logged_in? && current_user || current_user.admin? %>
+                <%= link_to "Edit", edit_user_path(@user), class: "btn btn-outline-success" %>
+                <%= link_to "Delete", user_path(@user), method: :destroy, data: { confirm: "本当に削除しても宜しいですか？?" }, class: "btn btn-outline-danger" %>
+            <% end %>
+        </div>
+
+        <h3 class="text-center mt-4 mb-4">投稿</h3>
+
+        <div class="apple_pagination mt-4">
+            <%= will_paginate @articles, :container => false %>
+        </div>
+
+            <%= render 'articles/article' %>
+
+        <div class="apple_pagination mt-4">
+            <%= will_paginate @articles, :container => false %>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->

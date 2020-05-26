@@ -41,7 +41,7 @@ class ArticlesController < ApplicationController
     def destroy
         @article.destroy
             flash[:notice] = "Article was deleted successfully"
-        redirect_to articles_path # !article_path = the page with prefix(artciles) in routes --expanded(route3)
+        redirect_to articles_path
     end
 
     private
